@@ -43,6 +43,7 @@
   "author": "Google LLC",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "haunted": "^5.0.0",
     "lit": "^2.2.4"
   },
   "devDependencies": {
