@@ -1,74 +1,44 @@
 {
-  "name": "@lit/lit-starter-ts",
+  "name": "little-ui",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.4",
-  "description": "A simple web component",
-  "main": "my-element.js",
-  "module": "my-element.js",
-  "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch",
-    "clean": "rimraf my-element.{d.ts,d.ts.map,js,js.map} test/my-element.{d.ts,d.ts.map,js,js.map} test/my-element_test.{d.ts,d.ts.map,js,js.map}",
-    "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
-    "lint:eslint": "eslint 'src/**/*.ts'",
-    "lint:lit-analyzer": "lit-analyzer",
-    "format": "prettier \"**/*.{cjs,html,js,json,md,ts}\" --ignore-path ./.eslintignore --write",
-    "docs": "npm run docs:clean && npm run build && npm run analyze && npm run docs:build && npm run docs:assets && npm run docs:gen",
-    "docs:clean": "rimraf docs",
-    "docs:gen": "eleventy --config=.eleventy.cjs",
-    "docs:gen:watch": "eleventy --config=.eleventy.cjs --watch",
-    "docs:build": "rollup -c --file docs/my-element.bundled.js",
-    "docs:assets": "cp node_modules/prismjs/themes/prism-okaidia.css docs/",
-    "docs:serve": "wds --root-dir=docs --node-resolve --watch",
-    "analyze": "cem analyze --litelement --globs \"src/**/*.ts\"",
-    "analyze:watch": "cem analyze --litelement --globs \"src/**/*.ts\" --watch",
-    "serve": "wds --watch",
-    "serve:prod": "MODE=prod npm run serve",
-    "test": "npm run test:dev && npm run test:prod",
-    "test:dev": "wtr",
-    "test:watch": "wtr --watch",
-    "test:prod": "MODE=prod wtr",
-    "test:prod:watch": "MODE=prod wtr --watch",
-    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js"
-  },
-  "keywords": [
-    "web-components",
-    "lit-element",
-    "typescript",
-    "lit"
-  ],
-  "author": "Google LLC",
-  "license": "BSD-3-Clause",
   "dependencies": {
-    "haunted": "^5.0.0",
-    "lit": "^2.2.4"
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "lodash": "^4.17.21",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@babel/core": "^7.18.9",
-    "@custom-elements-manifest/analyzer": "^0.6.3",
-    "@open-wc/testing": "^3.1.5",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-replace": "^4.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.25.0",
-    "@typescript-eslint/parser": "^5.25.0",
-    "@web/dev-server": "^0.1.31",
-    "@web/dev-server-legacy": "^1.0.0",
-    "@web/test-runner": "^0.13.27",
-    "@web/test-runner-playwright": "^0.8.8",
-    "@webcomponents/webcomponentsjs": "^2.6.0",
-    "babel-loader": "^8.2.5",
-    "eslint": "^8.15.0",
-    "lit-analyzer": "^1.2.1",
-    "lit-html": "^2.2.7",
-    "prettier": "^2.6.2",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.73.0",
-    "rollup-plugin-summary": "^1.4.3",
-    "rollup-plugin-terser": "^7.0.2",
-    "typescript": "~4.7.4"
-  },
-  "customElements": "custom-elements.json"
+    "eslint": "^8.57.1",
+    "prettier": "^3.5.3"
+  }
 }
