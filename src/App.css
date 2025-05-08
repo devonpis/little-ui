@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index:999;
 }
 #skip-to-content:hover, #skip-to-content:focus {
   height: auto;
@@ -15,4 +16,7 @@
   max-width: 640px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+@media (max-width: 640px) {
 }
