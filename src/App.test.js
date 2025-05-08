@@ -21,7 +21,7 @@ useful function:
 */
 import { render, screen, act, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import App, { filterUser } from "./App";
+import App from "./App";
 // import useExampleHook from "./hooks/useExampleHook";
 
 function delay(ms) {
