@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./App.css";
 
 function App() {
-  const [time] = useState(() => new Date().toLocaleTimeString());
+  const time = new Date().toLocaleTimeString();
 
   return (
-    <div className="app-container">
-      <h1>Atlassian Coding Interview Environment</h1>
-      <p>Loaded at: {time}</p>
+    <div className="master-layout">
+      <a href="#header" id="skip-to-content">
+        skip to content
+      </a>
+      <h1 id="header">Atlassian Coding Interview Environment</h1>
+      <p>Loaded time: {time}</p>
+      
     </div>
   );
 }
