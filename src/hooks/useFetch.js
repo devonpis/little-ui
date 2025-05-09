@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function useFetch(url) {
   const [data, setData] = useState(null);
-  const [isLoading, setLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -11,24 +10,25 @@ export default function useFetch(url) {
 
     const fetchData = async () => {
       try {
-        setLoading(true);
+        setIsLoading(true);
         const response = await fetch(url);
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) throw new Error("Network response was not ok");
         const json = await response.json();
         if (!cancelled) setData(json);
       } catch (err) {
         if (!cancelled) {
-          setIsError(true);
           setError(err);
         }
       } finally {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) setIsLoading(false);
       }
     };
 
     fetchData();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [url]);
 
-  return { data, isLoading, isError, error };
+  return { data, isLoading, isError: !!error, error };
 }
