@@ -18,5 +18,18 @@
   padding: 2rem;
 }
 
+.bar-chart-container {
+  height: 360px;
+  width: 100%;
+  border: 1px solid #333;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.bar-chart-item {
+      flex: 1;
+}
+
 @media (max-width: 640px) {
 }

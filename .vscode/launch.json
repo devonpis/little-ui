@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "command": "npm start",
       "name": "Run npm start",
@@ -25,6 +26,12 @@
       "preLaunchTask": "swa: start little-ui",
       "webRoot": "${workspaceFolder}/",
       "timeout": 30000
-    }
+    },
+    {
+      "command": "npm test",
+      "name": "Run npm test",
+      "request": "launch",
+      "type": "node-terminal"
+    },
   ]
 }
